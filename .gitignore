@@ -1,0 +1,11 @@
+node_modules
+dist
+.env
+.env.local
+*.log
+.DS_Store
+# Keep large originals out of git (see README: "Adding videos")
+public/videos/*.mp4
+public/videos/*.mov
+public/videos/*.mkv
+public/projects/raw/

@@ -1,0 +1,26 @@
+{
+  "name": "mohamed-mosaad-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Bilingual (EN/AR) portfolio for Mohamed Mosaad, Flutter Developer and Video Editor.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "optimize-images": "node scripts/optimize-images.mjs"
+  },
+  "dependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "sharp": "^0.35.5",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.4"
+  }
+}
