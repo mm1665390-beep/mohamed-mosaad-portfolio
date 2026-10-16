@@ -58,9 +58,11 @@ export function ProjectRow({ project, number }: Props) {
 
         <div className="project-stack">
           <span className="meta-label">{t.flutter.stack}</span>
-          <ul className="chips" dir="ltr">
+          <ul className="chips">
             {project.stack.map((s) => (
-              <li key={s}>{s}</li>
+              <li key={s} dir="ltr">
+                {s}
+              </li>
             ))}
           </ul>
         </div>

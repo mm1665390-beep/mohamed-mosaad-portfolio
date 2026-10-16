@@ -641,10 +641,6 @@ dt {
   flex-wrap: wrap;
   gap: 0.4rem;
 }
-:root[dir='rtl'] .chips {
-  justify-content: flex-end;
-  flex-direction: row-reverse;
-}
 .chips li,
 .skill-list li {
   font-family: var(--font-latin);
@@ -803,10 +799,6 @@ dt {
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem;
-}
-:root[dir='rtl'] .skill-list {
-  justify-content: flex-end;
-  flex-direction: row-reverse;
 }
 .skill-list li {
   font-size: 0.95rem;

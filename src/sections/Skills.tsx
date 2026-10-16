@@ -18,9 +18,11 @@ export function Skills() {
           {skillGroups.map((g, i) => (
             <Reveal key={g.id} className="skill-group" delay={i * 40}>
               <h3>{t.skills.groups[g.id]}</h3>
-              <ul dir="ltr" className="skill-list">
+              <ul className="skill-list">
                 {g.items.map((item) => (
-                  <li key={item}>{item}</li>
+                  <li key={item} dir="ltr">
+                    {item}
+                  </li>
                 ))}
               </ul>
             </Reveal>
