@@ -11,7 +11,7 @@ export function VideoWork() {
   const hasContent = Boolean(showreel) || videos.length > 0;
 
   return (
-    <section id="video" className="section" aria-labelledby="video-title">
+    <section id="video" className="section section-dark" aria-labelledby="video-title">
       <div className="container">
         <SectionHeader
           id="video-title"
@@ -27,7 +27,9 @@ export function VideoWork() {
         )}
 
         {videos.length > 0 && (
-          <ul className="video-grid">
+          <ul
+            className={`video-grid ${videos.every((v) => v.aspect === 'portrait') ? 'video-grid--portrait' : ''}`.trim()}
+          >
             {videos.map((v) => (
               <li key={v.id}>
                 <Reveal>

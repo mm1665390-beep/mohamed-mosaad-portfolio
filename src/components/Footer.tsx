@@ -33,7 +33,6 @@ export function Footer() {
             <a href="#home">{t.footer.top}</a>
           </li>
         </ul>
-        <p className="footer-note">{t.footer.built}</p>
       </div>
     </footer>
   );

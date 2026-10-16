@@ -772,6 +772,92 @@ dt {
   color: var(--ink-soft);
 }
 
+/* Video section: dark ink background keeps it visually separate from the Flutter work */
+.section-dark {
+  background: var(--ink);
+  color: var(--paper);
+}
+.section-dark .section-index {
+  color: var(--lilac);
+}
+.section-dark .section-intro,
+.section-dark .video-desc {
+  color: var(--blue-soft);
+}
+.section-dark .video-category {
+  color: var(--lilac);
+}
+.section-dark .video-empty p {
+  color: var(--blue-soft);
+}
+.section-dark :focus-visible {
+  outline-color: var(--lilac);
+}
+.section-dark .button-primary {
+  background: var(--lilac);
+  color: var(--ink);
+}
+.section-dark .button-primary:hover {
+  background: var(--blue-soft);
+}
+
+/* Portrait (9:16) reels */
+.video-grid--portrait {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+@media (min-width: 48rem) {
+  .video-grid--portrait {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.75rem 1.5rem;
+    max-width: 62rem;
+    margin-inline-start: 5.5rem;
+  }
+}
+@media (min-width: 48rem) and (max-width: 54rem) {
+  .video-grid--portrait {
+    margin-inline-start: 0;
+  }
+}
+.is-portrait .video-frame {
+  aspect-ratio: 9 / 16;
+}
+.video-start img {
+  display: block;
+}
+a.video-start {
+  text-decoration: none;
+}
+.video-open {
+  position: absolute;
+  inset-inline: 0.75rem;
+  inset-block-end: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 3px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.2s var(--ease), transform 0.2s var(--ease);
+}
+.video-start:hover .video-open,
+.video-start:focus-visible .video-open {
+  opacity: 1;
+  transform: none;
+}
+@media (hover: none) {
+  .video-open {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* ==========================================================================
    Skills
    ========================================================================== */
@@ -970,10 +1056,6 @@ dt {
 }
 .footer-links a:hover {
   color: var(--blue);
-}
-.footer-note {
-  color: var(--ink-soft);
-  font-size: 0.85rem;
 }
 
 /* ==========================================================================

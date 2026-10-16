@@ -66,9 +66,10 @@ const en = {
     index: '03',
     title: 'Video Editing',
     intro:
-      'A selection of edited work. Videos load only when you press play, so the page stays fast.',
+      'Vertical short-form edits: reels, captions and animated titles. Each thumbnail opens the full video folder on Google Drive.',
     showreel: 'Showreel',
     play: 'Play',
+    viewInDrive: 'Open in Drive',
     loading: 'Loading video',
     openDrive: 'Open the full video folder on Google Drive',
     emptyTitle: 'Video gallery is being prepared',
@@ -116,7 +117,6 @@ const en = {
   footer: {
     rights: 'All rights reserved.',
     top: 'Back to top',
-    built: 'Built with React, TypeScript and Vite.',
   },
 };
 

@@ -74,12 +74,17 @@ Until a project has an image, its card shows a typographic placeholder instead.
 
 ## Adding videos
 
+The gallery currently shows six real thumbnails (in `public/videos/posters/`). Each one links
+to your Drive folder because individual file links were not available. To make a card play
+the actual video, replace its `source` in `src/data/videos.ts` using one of the options below.
+
 Google Drive folders cannot be read or embedded automatically: the folder listing needs a
-signed-in browser, and each file must be individually shared. Add videos one of three ways
+signed-in browser, and each file must be individually shared. Add videos one of these ways
 in `src/data/videos.ts`:
 
 | Where the video lives | What to add | Notes |
 | --- | --- | --- |
+| Any URL (current setup) | `{ kind: 'link', href: 'https://...' }` | Thumbnail opens the URL in a new tab. Use a single file's Drive share link here. |
 | YouTube / Vimeo (recommended for large files) | `{ kind: 'youtube', id: '...' }` | Upload as *Unlisted* if you do not want it searchable. |
 | Google Drive | `{ kind: 'drive', id: 'FILE_ID' }` | In Drive: right-click file → Share → *Anyone with the link: Viewer*. The ID is the part between `/d/` and `/view` in the share link. |
 | Small MP4 in this repo | `{ kind: 'file', src: 'videos/clip.mp4' }` | Keep under about 25 MB. Do **not** commit large originals; GitHub rejects files over 100 MB and slows down on big repos. |

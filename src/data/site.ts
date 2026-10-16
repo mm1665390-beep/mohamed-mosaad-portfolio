@@ -11,5 +11,5 @@ export const site = {
   linkedin: 'https://www.linkedin.com/in/mohamed-mosaad-4618b4352/',
   github: 'https://github.com/mm1665390-beep',
   driveFolder:
-    'https://drive.google.com/drive/folders/18XE_Ho_PuvMBvNlifrGIM9SgeMEnejv3?usp=sharing',
+    'https://drive.google.com/drive/folders/1xd4W5xyAIdK1Ilr13mF23J_tiJ35vvBf?usp=sharing',
 } as const;
