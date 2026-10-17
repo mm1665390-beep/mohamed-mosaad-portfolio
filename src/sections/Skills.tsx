@@ -17,11 +17,16 @@ export function Skills() {
         />
         <div className="skill-groups">
           {skillGroups.map((g, i) => (
-            <Reveal key={g.id} className="skill-group" delay={i * 40}>
+            <Reveal key={g.id} className="skill-group" delay={i * 90}>
+              <div className="skill-card-top">
+                <span className="skill-card-index">{String(i + 1).padStart(2, '0')}</span>
+                <span className="skill-card-mark" aria-hidden="true"><span /></span>
+              </div>
               <h3>{t.skills.groups[g.id]}</h3>
               <ul className="skill-list">
                 {g.items.map((item, k) => (
                   <li key={item} dir="ltr" style={cssVars({ '--k': k })}>
+                    <span className="skill-dot" aria-hidden="true" />
                     {item}
                   </li>
                 ))}
