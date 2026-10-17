@@ -1,5 +1,6 @@
 import { useLanguage } from '../i18n/LanguageProvider';
-import { site } from '../data/site';
+import { profilePhoto, site } from '../data/site';
+import { assetUrl } from '../lib/assets';
 import { ArrowIcon } from '../components/icons';
 
 export function Hero() {
@@ -30,9 +31,22 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="hero-mark" aria-hidden="true">
-          <span className="hero-mark-letters">{site.initials}</span>
-        </div>
+        {profilePhoto ? (
+          <div className="hero-photo">
+            <img
+              src={assetUrl(profilePhoto.src)}
+              width={profilePhoto.width}
+              height={profilePhoto.height}
+              alt={l(site.name)}
+              fetchPriority="high"
+              decoding="async"
+            />
+          </div>
+        ) : (
+          <div className="hero-mark" aria-hidden="true">
+            <span className="hero-mark-letters">{site.initials}</span>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -70,7 +70,16 @@ Only use real screenshots of the running app.
    and prints a ready-to-paste `images` entry with the correct width and height.
 3. Paste that entry into the project's `images` array in `src/data/projects.ts`.
 
-Until a project has an image, its card shows a typographic placeholder instead.
+Until a project has real images, its card shows an **illustrative phone preview** (drawn in
+HTML/CSS, labelled "Illustrative preview, not a screenshot of the app"). They are generic
+layouts, not the real apps. As soon as you add entries to `images`, the real screenshot
+replaces the illustration automatically. The layout is chosen with `mockup: 'shop' | 'cards' | 'list'`.
+
+## Adding your photo
+
+1. Put one photo in `public/profile/raw/` (git-ignored).
+2. `npm run optimize-photo` creates `public/profile/photo.webp` (4:5, 800x1000) and prints a line.
+3. Paste that `profilePhoto` object into `src/data/site.ts`. Until then the hero shows the "MM" mark.
 
 ## Adding videos
 

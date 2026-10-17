@@ -13,3 +13,10 @@ export const site = {
   driveFolder:
     'https://drive.google.com/drive/folders/1xd4W5xyAIdK1Ilr13mF23J_tiJ35vvBf?usp=sharing',
 } as const;
+
+/**
+ * Your real portrait. Leave as null until you add one; the hero then shows the "MM" mark.
+ * To add it: put your photo in public/profile/raw/, run `npm run optimize-photo`,
+ * and paste the printed object here.
+ */
+export const profilePhoto: { src: string; width: number; height: number } | null = null;

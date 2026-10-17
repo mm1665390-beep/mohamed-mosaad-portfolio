@@ -3,6 +3,7 @@ import { useLanguage } from '../i18n/LanguageProvider';
 import { assetUrl } from '../lib/assets';
 import { ExternalLink } from './ExternalLink';
 import { ArrowIcon } from './icons';
+import { PhoneMockup } from './PhoneMockup';
 import { Reveal } from './Reveal';
 
 interface Props {
@@ -17,7 +18,10 @@ export function ProjectRow({ project, number }: Props) {
 
   return (
     <Reveal as="article" className="project" >
-      <div className="project-visual" aria-hidden={shot ? undefined : true}>
+      <div
+        className="project-visual"
+        aria-hidden={shot || project.mockup ? undefined : true}
+      >
         {shot ? (
           <img
             src={assetUrl(shot.src)}
@@ -27,6 +31,8 @@ export function ProjectRow({ project, number }: Props) {
             loading="lazy"
             decoding="async"
           />
+        ) : project.mockup ? (
+          <PhoneMockup kind={project.mockup} label={t.flutter.illustrative} />
         ) : (
           <div className="project-placeholder">
             <span className="project-placeholder-number">{number}</span>

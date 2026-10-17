@@ -58,7 +58,7 @@ const ar: Dictionary = {
     status: 'الحالة',
     teamProject: 'مشروع جماعي',
     soloProject: 'مشروع شخصي',
-    noScreens: 'ستظهر هنا لقطات الشاشة الحقيقية بمجرد إضافتها إلى المشروع.',
+    illustrative: 'معاينة توضيحية، وليست لقطة شاشة من التطبيق',
     allRepos: 'كل المستودعات على GitHub',
     screenshotAlt: 'لقطة شاشة من',
   },

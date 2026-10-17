@@ -772,6 +772,314 @@ dt {
   color: var(--ink-soft);
 }
 
+/* ==========================================================================
+   Illustrative phone previews (NOT screenshots; always labelled on the page)
+   Everything scales with the panel width via container units: 1em = 1cqw.
+   ========================================================================== */
+.mock-panel {
+  display: grid;
+  gap: 0.6rem;
+}
+.mock {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: var(--blue-soft);
+  border-radius: 4px;
+  overflow: hidden;
+  container-type: inline-size;
+}
+.mock::after {
+  content: '';
+  position: absolute;
+  inset-inline-end: 0;
+  inset-block-end: 0;
+  width: 26%;
+  height: 26%;
+  background: var(--lilac);
+}
+.mock-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+.phone {
+  position: absolute;
+  z-index: 1;
+  width: 31em;
+  height: 66em;
+  font-size: 1cqw;
+  background: var(--ink);
+  border-radius: 3.4em;
+  padding: 0.9em;
+  box-shadow: 0 1.6em 3em rgba(27, 28, 69, 0.22);
+  transition: transform 0.35s var(--ease);
+}
+.phone-back {
+  left: 20em;
+  top: 7em;
+}
+.phone-front {
+  left: 47em;
+  top: 4em;
+  z-index: 2;
+}
+.project:hover .phone-front {
+  transform: translateY(-0.8em);
+}
+.project:hover .phone-back {
+  transform: translateY(0.5em);
+}
+.phone-screen {
+  height: 100%;
+  background: var(--paper);
+  border-radius: 2.6em;
+  padding: 1.4em 1.4em 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9em;
+  overflow: hidden;
+  position: relative;
+}
+.m-status {
+  display: flex;
+  justify-content: space-between;
+}
+.m-status span {
+  width: 3em;
+  height: 0.7em;
+  border-radius: 0.4em;
+  background: var(--ink);
+  opacity: 0.3;
+}
+.m-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.m-title {
+  font-family: var(--font-latin);
+  font-size: 2.4em;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--ink);
+}
+.m-dot {
+  width: 2.4em;
+  height: 2.4em;
+  border-radius: 50%;
+  background: var(--lilac);
+}
+.m-search {
+  height: 3.2em;
+  display: flex;
+  align-items: center;
+  padding-inline: 1em;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 0.6em;
+  font-family: var(--font-latin);
+  font-size: 1.4em;
+  color: var(--ink-soft);
+}
+.m-chips {
+  display: flex;
+  gap: 0.6em;
+}
+.m-chips i {
+  width: 5em;
+  height: 2em;
+  border-radius: 1em;
+  background: var(--white);
+  border: 1px solid var(--line);
+}
+.m-chips i.is-on {
+  background: var(--blue);
+  border-color: var(--blue);
+}
+.m-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9em;
+}
+.m-card {
+  display: grid;
+  gap: 0.5em;
+  align-content: start;
+  padding: 0.6em;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 0.8em;
+}
+.m-img,
+.m-thumb,
+.m-avatar {
+  display: block;
+  border-radius: 0.5em;
+}
+.m-img {
+  aspect-ratio: 1;
+}
+.m-img-0 {
+  background: var(--blue-soft);
+}
+.m-img-1 {
+  background: var(--lilac);
+}
+.m-img-2 {
+  background: var(--indigo);
+}
+.m-bar {
+  display: block;
+  height: 0.8em;
+  border-radius: 0.4em;
+  background: var(--line);
+}
+.m-bar-s {
+  width: 55%;
+}
+.m-bar-m {
+  width: 9em;
+  height: 1.2em;
+  background: var(--ink);
+  opacity: 0.8;
+}
+.m-bar-l {
+  height: 1.5em;
+  width: 80%;
+  background: var(--ink);
+  opacity: 0.8;
+}
+.m-price {
+  display: block;
+  width: 30%;
+  height: 1em;
+  border-radius: 0.4em;
+  background: var(--blue);
+}
+.m-nav {
+  margin: auto -1.4em 0;
+  padding: 1em 0 1.2em;
+  display: flex;
+  justify-content: space-around;
+  background: var(--white);
+  border-top: 1px solid var(--line);
+}
+.m-nav i {
+  width: 2em;
+  height: 2em;
+  border-radius: 0.5em;
+  background: var(--line);
+}
+.m-nav i.is-on {
+  background: var(--blue);
+}
+.m-row {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 0.8em;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 0.8em;
+}
+.m-thumb {
+  width: 4.6em;
+  height: 4.6em;
+  flex: none;
+}
+.m-avatar {
+  width: 4em;
+  height: 4em;
+  flex: none;
+  border-radius: 50%;
+}
+.m-row-text {
+  flex: 1;
+  display: grid;
+  gap: 0.5em;
+}
+.m-qty {
+  width: 3em;
+  height: 2em;
+  border-radius: 0.5em;
+  background: var(--blue-soft);
+}
+.m-chev {
+  width: 1em;
+  height: 1em;
+  border-top: 2px solid var(--indigo);
+  border-right: 2px solid var(--indigo);
+  transform: rotate(45deg);
+}
+.m-total {
+  display: grid;
+  gap: 0.5em;
+  padding: 0.8em;
+}
+.m-button {
+  margin: auto 0 1.6em;
+  height: 3.6em;
+  display: grid;
+  place-items: center;
+  background: var(--blue);
+  color: var(--white);
+  font-family: var(--font-latin);
+  font-size: 1.4em;
+  font-weight: 700;
+  border-radius: 0.8em;
+}
+.m-banner {
+  display: block;
+  height: 11em;
+  border-radius: 0.8em;
+  background: var(--blue);
+}
+.m-banner-tall {
+  height: 19em;
+  background: var(--lilac);
+}
+.m-hero {
+  display: block;
+  height: 24em;
+  margin: -1.4em -1.4em 0;
+  background: var(--lilac);
+}
+.m-pad {
+  display: grid;
+  gap: 0.7em;
+}
+
+/* Hero portrait (rendered only when a photo is configured in src/data/site.ts) */
+.hero-photo {
+  position: relative;
+  width: clamp(11rem, 24vw, 19rem);
+  aspect-ratio: 4 / 5;
+  isolation: isolate;
+}
+.hero-photo::before {
+  content: '';
+  position: absolute;
+  inset-inline-end: -0.9rem;
+  inset-block-end: -0.9rem;
+  width: 70%;
+  height: 70%;
+  background: var(--lilac);
+  z-index: -1;
+}
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: var(--blue-soft);
+  border-radius: 4px;
+}
+@media (max-width: 54rem) {
+  .hero-photo {
+    width: 9.5rem;
+    order: -1;
+  }
+}
+
 /* Video section: dark ink background keeps it visually separate from the Flutter work */
 .section-dark {
   background: var(--ink);
@@ -827,6 +1135,17 @@ dt {
 }
 a.video-start {
   text-decoration: none;
+}
+.video-original {
+  justify-self: start;
+  margin-block-start: 0.2rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--lilac);
+  text-underline-offset: 4px;
+}
+.video-original:hover {
+  color: var(--blue-soft);
 }
 .video-open {
   position: absolute;

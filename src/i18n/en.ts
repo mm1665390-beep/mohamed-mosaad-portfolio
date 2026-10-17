@@ -57,8 +57,7 @@ const en = {
     status: 'Status',
     teamProject: 'Team project',
     soloProject: 'Personal project',
-    noScreens:
-      'Screenshots will appear here once real ones are added to the project.',
+    illustrative: 'Illustrative preview, not a screenshot of the app',
     allRepos: 'All repositories on GitHub',
     screenshotAlt: 'Screenshot of',
   },

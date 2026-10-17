@@ -3,6 +3,7 @@ import type { VideoItem, VideoSource } from '../data/videos';
 import { useLanguage } from '../i18n/LanguageProvider';
 import { assetUrl } from '../lib/assets';
 import { ArrowIcon, PlayIcon } from './icons';
+import { ExternalLink } from './ExternalLink';
 
 function posterFor(item: VideoItem): string | null {
   if (item.poster) return assetUrl(item.poster);
@@ -57,6 +58,22 @@ function Player({ source, title }: { source: VideoSource; title: string }) {
   }
 }
 
+/** Address of the original video, used for the "Open original" fallback link. */
+function originalUrl(source: VideoSource): string | null {
+  switch (source.kind) {
+    case 'drive':
+      return `https://drive.google.com/file/d/${source.id}/view`;
+    case 'youtube':
+      return `https://www.youtube.com/watch?v=${source.id}`;
+    case 'vimeo':
+      return `https://vimeo.com/${source.id}`;
+    case 'file':
+      return assetUrl(source.src);
+    case 'link':
+      return null; // the whole card is already the link
+  }
+}
+
 /**
  * Video card.
  * - Embeddable sources load only after the visitor presses play.
@@ -70,6 +87,7 @@ export function VideoCard({ item, featured = false }: { item: VideoItem; feature
   const title = l(item.title);
   const portrait = item.aspect === 'portrait';
   const posterAlt = item.posterAlt ? l(item.posterAlt) : '';
+  const original = originalUrl(item.source);
 
   const image =
     poster && !posterFailed ? (
@@ -129,6 +147,11 @@ export function VideoCard({ item, featured = false }: { item: VideoItem; feature
         <span className="video-category">{t.video.category[item.category]}</span>
         <span className="video-title">{title}</span>
         {item.description && <span className="video-desc">{l(item.description)}</span>}
+        {original && (
+          <ExternalLink href={original} className="video-original" plain>
+            {t.video.openOriginal}
+          </ExternalLink>
+        )}
       </figcaption>
     </figure>
   );

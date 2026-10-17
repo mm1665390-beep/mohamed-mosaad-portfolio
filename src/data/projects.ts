@@ -26,6 +26,12 @@ export interface Project {
    * While this is empty the card shows a typographic placeholder, never a mock-up.
    */
   images: ProjectImage[];
+  /**
+   * Layout used for the ILLUSTRATIVE preview while `images` is empty.
+   * shop = browse / search / cart; cards = card catalogue; list = list screens.
+   * It is a generic layout, labelled "Illustrative preview" on the site.
+   */
+  mockup?: 'shop' | 'cards' | 'list';
 }
 
 /**
@@ -49,6 +55,7 @@ export const projects: Project[] = [
     },
     stack: ['Flutter', 'Dart', 'REST APIs'],
     images: [],
+    mockup: 'shop',
   },
   {
     id: 'handmade',
@@ -72,6 +79,7 @@ export const projects: Project[] = [
       'Freezed',
     ],
     images: [],
+    mockup: 'cards',
   },
   {
     id: 'fixnow',
@@ -94,5 +102,6 @@ export const projects: Project[] = [
       'Freezed',
     ],
     images: [],
+    mockup: 'list',
   },
 ];
