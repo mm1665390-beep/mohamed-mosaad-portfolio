@@ -1781,3 +1781,228 @@ a.video-start {
     display: none;
   }
 }
+
+/* ==========================================================================
+   Portfolio polish pass — preserve the original blue / lilac brand palette
+   ========================================================================== */
+:root {
+  --radius-card: 1.1rem;
+  --shadow-soft: 0 1rem 2.8rem -2rem rgba(27, 28, 69, 0.28);
+  --shadow-lift: 0 1.4rem 3.2rem -1.7rem rgba(27, 28, 69, 0.42);
+}
+
+/* More deliberate, premium rhythm without changing the existing brand */
+.section {
+  position: relative;
+  scroll-margin-top: calc(var(--header-h) + 1rem);
+}
+.section-header {
+  align-items: start;
+}
+.section-index {
+  position: relative;
+  padding-block-start: 0.55rem;
+  width: fit-content;
+}
+.section-index::before {
+  content: '';
+  display: block;
+  width: 2.35rem;
+  height: 0.22rem;
+  margin-block-end: 0.65rem;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--blue), var(--lilac));
+}
+
+/* Portrait: a cleaner framed composition with a gentle hover response */
+.hero-photo {
+  border-radius: 0.9rem;
+  filter: drop-shadow(0 1.4rem 1.8rem rgba(27, 28, 69, 0.08));
+  transition: filter 0.35s var(--ease), transform 0.45s var(--ease);
+}
+.hero-photo img {
+  border: 1px solid rgba(95, 96, 185, 0.16);
+  border-radius: 0.9rem;
+  object-position: center 22%;
+}
+.hero-photo:hover {
+  transform: translateY(-5px) rotate(0.3deg);
+  filter: drop-shadow(0 1.8rem 2rem rgba(27, 28, 69, 0.16));
+}
+.hero-photo::before,
+.hero-photo::after {
+  border-radius: 0.65rem;
+}
+.hero-photo-tag {
+  border-radius: 0.7rem;
+  box-shadow: 0 0.7rem 1.3rem -0.7rem rgba(27, 28, 69, 0.55);
+}
+
+/* Stronger project presentation: individual elevated panels, same palette */
+.projects {
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+}
+.project {
+  position: relative;
+  padding: clamp(1rem, 2.5vw, 2rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  background: var(--white);
+  box-shadow: 0 0.3rem 1.3rem -1rem rgba(27, 28, 69, 0.2);
+  gap: clamp(1.5rem, 3.5vw, 3rem);
+  transition: border-color 0.3s var(--ease), box-shadow 0.35s var(--ease), transform 0.35s var(--ease);
+}
+.project:first-child {
+  padding-block-start: clamp(1rem, 2.5vw, 2rem);
+}
+.project:hover {
+  border-color: rgba(95, 96, 185, 0.55);
+  box-shadow: var(--shadow-lift);
+  transform: translateY(-3px);
+}
+.project-visual {
+  min-width: 0;
+  border-radius: 0.85rem;
+}
+.project-visual > img {
+  border-radius: 0.85rem;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.6s var(--ease), box-shadow 0.4s var(--ease);
+}
+.project:hover .project-visual > img {
+  transform: scale(1.015);
+  box-shadow: var(--shadow-lift);
+}
+.mock {
+  border-radius: 0.85rem;
+  box-shadow: var(--shadow-soft);
+}
+.mock-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  width: fit-content;
+  padding: 0.28rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+  font-size: 0.75rem;
+}
+.mock-label::before {
+  content: '';
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 50%;
+  background: var(--indigo);
+}
+.project-title {
+  text-wrap: balance;
+}
+.project-desc {
+  max-width: 42rem;
+  line-height: 1.8;
+}
+.badge {
+  border-radius: 999px;
+  padding: 0.24rem 0.72rem;
+}
+.chips li,
+.skill-list li {
+  border-radius: 999px;
+  padding: 0.32rem 0.75rem;
+}
+
+/* More tactile buttons and navigation */
+.button {
+  transition: transform 0.22s var(--ease), box-shadow 0.25s var(--ease), background 0.25s var(--ease), color 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+.button-primary {
+  box-shadow: 0 0.55rem 1.2rem -0.8rem rgba(37, 99, 235, 0.85);
+}
+.button-primary:hover {
+  box-shadow: 0 0.8rem 1.45rem -0.75rem rgba(37, 99, 235, 0.8);
+}
+.nav a {
+  border-radius: 0.55rem 0.55rem 0 0;
+}
+.nav a[aria-current='true'] {
+  background: rgba(219, 234, 254, 0.42);
+}
+
+/* Video gallery cards feel like a curated showreel, not plain embeds */
+.video-grid {
+  gap: clamp(1.1rem, 2.3vw, 1.65rem);
+}
+.video-card {
+  height: 100%;
+  padding: 0.65rem;
+  border: 1px solid rgba(177, 178, 252, 0.25);
+  border-radius: 1rem;
+  background: rgba(243, 243, 251, 0.045);
+  transition: border-color 0.3s var(--ease), background 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.video-card:hover {
+  border-color: rgba(177, 178, 252, 0.75);
+  background: rgba(243, 243, 251, 0.075);
+  transform: translateY(-3px);
+}
+.video-frame {
+  border-radius: 0.7rem;
+  outline: 1px solid rgba(177, 178, 252, 0.16);
+  outline-offset: -1px;
+}
+.video-card figcaption {
+  padding: 0.45rem 0.35rem 0.3rem;
+  gap: 0.28rem;
+}
+.video-title {
+  line-height: 1.45;
+}
+.video-original {
+  width: fit-content;
+  margin-block-start: 0.35rem;
+  padding-block-end: 0.12rem;
+  border-block-end: 1px solid rgba(177, 178, 252, 0.5);
+}
+.video-card .video-frame img {
+  transition: transform 0.7s var(--ease), filter 0.35s var(--ease);
+}
+.video-card:hover .video-frame img {
+  transform: scale(1.035);
+  filter: saturate(1.08);
+}
+.video-play {
+  box-shadow: 0 0.5rem 1.6rem rgba(27, 28, 69, 0.28);
+}
+
+/* The animation cadence is staggered across the video gallery as well */
+.video-grid li:nth-child(2) .reveal { transition-delay: 70ms; }
+.video-grid li:nth-child(3) .reveal { transition-delay: 140ms; }
+.video-grid li:nth-child(4) .reveal { transition-delay: 210ms; }
+.video-grid li:nth-child(5) .reveal { transition-delay: 280ms; }
+.video-grid li:nth-child(6) .reveal { transition-delay: 350ms; }
+.video-grid li:nth-child(7) .reveal { transition-delay: 420ms; }
+
+@media (max-width: 54rem) {
+  .project {
+    padding: 1rem;
+    border-radius: 0.9rem;
+  }
+  .hero-photo {
+    border-radius: 0.8rem;
+  }
+  .video-card {
+    padding: 0.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project,
+  .hero-photo,
+  .project-visual > img,
+  .video-card,
+  .video-card .video-frame img {
+    transform: none !important;
+    transition: none !important;
+  }
+}
