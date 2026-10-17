@@ -15,8 +15,12 @@ export const site = {
 } as const;
 
 /**
- * Your real portrait. Leave as null until you add one; the hero then shows the "MM" mark.
- * To add it: put your photo in public/profile/raw/, run `npm run optimize-photo`,
- * and paste the printed object here.
+ * Your real portrait (cropped from your own photo, 4:5, no retouching).
+ * Set to null to go back to the "MM" mark. To replace the photo: put a new one in
+ * public/profile/raw/, run `npm run optimize-photo`, and paste the printed object here.
  */
-export const profilePhoto: { src: string; width: number; height: number } | null = null;
+export const profilePhoto: { src: string; width: number; height: number } | null = {
+  src: 'profile/photo.webp',
+  width: 640,
+  height: 800,
+};

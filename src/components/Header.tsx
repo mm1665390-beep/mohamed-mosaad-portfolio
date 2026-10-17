@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useLanguage } from '../i18n/LanguageProvider';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { Monogram } from './Monogram';
@@ -37,10 +37,40 @@ function useActiveSection(): NavId {
   return active;
 }
 
+/** Reading-progress bar value (0..1, written straight to a CSS variable) and a "scrolled" flag. */
+function useScrollState(barRef: React.RefObject<HTMLSpanElement | null>) {
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const el = document.documentElement;
+      const max = el.scrollHeight - el.clientHeight;
+      const p = max > 0 ? el.scrollTop / max : 0;
+      barRef.current?.style.setProperty('--p', String(p));
+      setScrolled(el.scrollTop > 8);
+    };
+    const onScroll = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+      if (frame) cancelAnimationFrame(frame);
+    };
+  }, [barRef]);
+  return scrolled;
+}
+
 export function Header() {
   const { t } = useLanguage();
   const [open, setOpen] = useState(false);
   const active = useActiveSection();
+  const barRef = useRef<HTMLSpanElement>(null);
+  const scrolled = useScrollState(barRef);
 
   // Close the mobile menu with Escape.
   useEffect(() => {
@@ -51,7 +81,7 @@ export function Header() {
   }, [open]);
 
   return (
-    <header className="site-header">
+    <header className={`site-header ${scrolled ? 'is-scrolled' : ''}`.trim()}>
       <div className="container header-inner">
         <a href="#home" className="brand" aria-label="Mohamed Mosaad — Home">
           <Monogram />
@@ -91,6 +121,7 @@ export function Header() {
           </button>
         </div>
       </div>
+      <span className="progress" ref={barRef} aria-hidden="true" />
     </header>
   );
 }

@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { Reveal } from './Reveal';
 
 interface Props {
   id: string;
@@ -7,10 +8,10 @@ interface Props {
   intro?: ReactNode;
 }
 
-/** Numbered section heading. `id` becomes the heading id for aria-labelledby. */
+/** Numbered section heading that animates in once. `id` is used for aria-labelledby. */
 export function SectionHeader({ id, index, title, intro }: Props) {
   return (
-    <header className="section-header">
+    <Reveal as="header" className="section-header">
       <p className="section-index" aria-hidden="true">
         {index}
       </p>
@@ -20,6 +21,6 @@ export function SectionHeader({ id, index, title, intro }: Props) {
         </h2>
         {intro && <p className="section-intro">{intro}</p>}
       </div>
-    </header>
+    </Reveal>
   );
 }

@@ -79,7 +79,9 @@ replaces the illustration automatically. The layout is chosen with `mockup: 'sho
 
 1. Put one photo in `public/profile/raw/` (git-ignored).
 2. `npm run optimize-photo` creates `public/profile/photo.webp` (4:5, 800x1000) and prints a line.
-3. Paste that `profilePhoto` object into `src/data/site.ts`. Until then the hero shows the "MM" mark.
+3. Paste that `profilePhoto` object into `src/data/site.ts`. Set it to `null` to go back to the "MM" mark.
+
+The current portrait is already set up (`public/profile/photo.webp`).
 
 ## Adding videos
 

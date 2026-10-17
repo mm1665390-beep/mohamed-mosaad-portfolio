@@ -9,12 +9,12 @@ export function About() {
       <div className="container">
         <SectionHeader id="about-title" index={t.about.index} title={t.about.title} />
         <div className="about-grid">
-          <Reveal className="about-text">
+          <Reveal className="about-text reveal-start">
             <p className="about-lead">{t.about.p1}</p>
             <p>{t.about.p2}</p>
             <p>{t.about.p3}</p>
           </Reveal>
-          <Reveal as="dl" className="facts" delay={80}>
+          <Reveal as="dl" className="facts reveal-end" delay={120}>
             <div className="fact">
               <dt>{t.about.educationLabel}</dt>
               <dd>
