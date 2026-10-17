@@ -27,7 +27,7 @@ const en = {
     eyebrow: 'Portfolio',
     role1: 'Flutter Developer',
     role2: '& Video Editor',
-    lead: 'I build mobile apps with Flutter and cut video in DaVinci Resolve and After Effects. I care about clean code, clear interfaces and careful pacing.',
+    lead: 'I build mobile apps with Flutter with a focus on maintainable code and clear UX, and turn raw footage into polished edits with intentional pacing using DaVinci Resolve and After Effects.',
     ctaWork: 'See Flutter work',
     ctaVideo: 'Watch video work',
     ctaContact: 'Get in touch',
@@ -36,9 +36,9 @@ const en = {
   about: {
     index: '01',
     title: 'About',
-    p1: 'I am a Computer Science student at Tanta University who builds mobile apps with Flutter and edits video.',
-    p2: 'On the development side I focus on structure: separating UI from logic, keeping state predictable and writing code that other people on a team can read. On the editing side I work on rhythm, clarity and finishing.',
-    p3: 'Some of my Flutter projects are team projects. Each one is labelled below so it is clear which is which.',
+    p1: 'I study Computer Science and Information Systems at Tanta University, with a focus on practical Flutter apps and video edits that communicate the core idea clearly.',
+    p2: 'In app development, I focus on clean structure, separation of concerns and architecture that is easier to maintain and extend. In editing, I pay attention to pacing, purposeful transitions, and the final picture and sound details.',
+    p3: 'This portfolio brings together selected Flutter and video-editing work, with project context and team contributions labelled clearly.',
     educationLabel: 'Education',
     degree: 'Faculty of Computer Science and Information Systems',
     school: 'Tanta University',
@@ -51,7 +51,7 @@ const en = {
     index: '02',
     title: 'Flutter Development',
     intro:
-      'Three Flutter applications. Descriptions only list what the repositories show, and team projects are marked as such.',
+      'Selected Flutter applications showcasing my focus on project structure, user experience and maintainable code. My role in each project is clearly labelled.',
     viewRepo: 'View repository',
     stack: 'Stack',
     status: 'Status',
@@ -65,7 +65,7 @@ const en = {
     index: '03',
     title: 'Video Editing',
     intro:
-      'Vertical short-form edits: reels, captions and animated titles. Each thumbnail opens the full video folder on Google Drive.',
+      'A selection of reels, promotional edits, captions and animated titles. Open a preview to view a piece, or visit Google Drive for the complete collection.',
     showreel: 'Showreel',
     play: 'Play',
     viewInDrive: 'Open in Drive',
@@ -86,7 +86,7 @@ const en = {
   skills: {
     index: '04',
     title: 'Skills',
-    intro: 'The technologies and practices I use for Flutter development.',
+    intro: 'The tools and practices I use to build Flutter applications that are structured, clear and easier to maintain.',
     groups: {
       core: 'Core',
       architecture: 'Architecture & principles',
@@ -98,14 +98,14 @@ const en = {
   tools: {
     index: '05',
     title: 'Editing Tools & Services',
-    intro: 'The software I edit with, and what I can do with it.',
+    intro: 'The tools I use for editing, and the services I can provide from the first assembly to the final polish.',
     toolsLabel: 'Software',
     servicesLabel: 'Services',
   },
   contact: {
     index: '06',
     title: 'Contact',
-    lead: 'Have a Flutter project or a video that needs editing? Send me a message.',
+    lead: 'Have an app idea to build or footage that needs a sharper, more engaging edit? Send me a few details about your project.',
     email: 'Email',
     whatsapp: 'WhatsApp',
     linkedin: 'LinkedIn',
