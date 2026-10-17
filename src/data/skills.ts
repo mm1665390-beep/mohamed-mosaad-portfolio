@@ -7,24 +7,12 @@ export interface SkillGroup {
   items: string[];
 }
 
-/**
- * Skills. Core, architecture and state items come from your own list.
- * Networking and tooling extras were confirmed in the dependency files of
- * your Flutter repositories. Remove anything you do not want to claim.
- */
+/** Development and post-production skills presented as separate disciplines. */
 export const skillGroups: SkillGroup[] = [
   { id: 'core', items: ['Flutter', 'Dart'] },
-  {
-    id: 'architecture',
-    items: ['Clean Architecture', 'MVVM', 'SOLID'],
-  },
+  { id: 'architecture', items: ['Clean Architecture', 'MVVM', 'SOLID'] },
   { id: 'state', items: ['BLoC / Cubit', 'Provider'] },
-  {
-    id: 'network',
-    items: ['REST APIs', 'Dio', 'Retrofit', 'Firebase Auth', 'SQLite (sqflite)'],
-  },
-  {
-    id: 'tooling',
-    items: ['GoRouter', 'get_it', 'Freezed', 'Git & GitHub'],
-  },
+  { id: 'network', items: ['REST APIs', 'Dio', 'Retrofit', 'Firebase Auth', 'SQLite (sqflite)'] },
+  { id: 'tooling', items: ['get_it', 'Freezed', 'JSON Serialization', 'Git & GitHub'] },
+  { id: 'editing', items: ['Video Editing', 'DaVinci Resolve', 'Adobe After Effects', 'Motion Graphics', 'Color Grading', 'Rotoscoping', 'Captions & Typography'] },
 ];

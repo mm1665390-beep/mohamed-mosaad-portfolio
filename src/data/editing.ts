@@ -16,6 +16,13 @@ export const editingTools: { name: string; role: L10n }[] = [
       ar: 'الموشن غرافيك والعناوين',
     },
   },
+  {
+    name: 'CapCut',
+    role: {
+      en: 'Short-form edits and captions',
+      ar: 'مونتاج الفيديوهات القصيرة والكابشنز',
+    },
+  },
 ];
 
 /**
