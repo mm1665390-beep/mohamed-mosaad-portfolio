@@ -9,8 +9,6 @@ import { Reveal } from '../components/Reveal';
 export function VideoWork() {
   const { t } = useLanguage();
   const hasContent = Boolean(showreel) || videos.length > 0;
-  const realEstateVideos = videos.filter((v) => v.category === 'realEstate');
-  const reelVideos = videos.filter((v) => v.category !== 'realEstate');
   const renderVideos = (items: typeof videos) => (
     <ul className={`video-grid ${items.every((v) => v.aspect === 'portrait') ? 'video-grid--portrait' : ''}`.trim()}>
       {items.map((v) => (
@@ -35,20 +33,7 @@ export function VideoWork() {
           </Reveal>
         )}
 
-        {reelVideos.length > 0 && (
-          <div className="video-category-group">
-            <h3 className="video-group-title">{t.video.reelsHeading}</h3>
-            {renderVideos(reelVideos)}
-          </div>
-        )}
-
-        {realEstateVideos.length > 0 && (
-          <div className="video-category-group video-category-group--real-estate">
-            <h3 className="video-group-title">{t.video.realEstateHeading}</h3>
-            <p className="video-group-intro">{t.video.realEstateIntro}</p>
-            {renderVideos(realEstateVideos)}
-          </div>
-        )}
+        {videos.length > 0 && renderVideos(videos)}
 
         {!hasContent && (
           <Reveal className="video-empty">
