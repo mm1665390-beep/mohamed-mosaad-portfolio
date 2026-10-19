@@ -66,6 +66,9 @@ const en = {
     title: 'Video Editing',
     intro:
       'A selection of reels, promotional edits, captions and animated titles. Open a preview to view a piece, or visit Google Drive for the complete collection.',
+    reelsHeading: 'Reels & Social Media',
+    realEstateHeading: 'Real Estate & Aerial Visualizations',
+    realEstateIntro: 'Property videos, aerial-style map animations, and land or location highlights.',
     showreel: 'Showreel',
     play: 'Play',
     viewInDrive: 'Open in Drive',
@@ -79,6 +82,7 @@ const en = {
       showreel: 'Showreel',
       sports: 'Sports',
       social: 'Social',
+      realEstate: 'Real Estate',
       promo: 'Promo',
       other: 'Edit',
     },

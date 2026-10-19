@@ -2052,3 +2052,10 @@ body, .site-header, .section-tint, .skill-group, .skill-list li, .theme-switch, 
 @media (max-width: 54rem) { .contact-cta-panel { align-items: flex-start; flex-direction: column; gap: 1.2rem; } .contact-list { margin-inline-start: 0; } }
 @media (max-width: 36rem) { .contact-list { grid-template-columns: minmax(0,1fr); gap: .7rem; } .contact-row { min-height: 6.8rem; grid-template-columns: 2.35rem minmax(0,1fr) 2rem; gap: .7rem; padding: .95rem; } .contact-row:hover { padding-inline: .95rem; } .contact-number { width: 2.25rem; height: 2.25rem; } .contact-value { font-size: .98rem; } .contact-detail { font-size: .76rem; } .contact-arrow { width: 2rem; height: 2rem; } .contact-primary-cta { width: 100%; box-sizing: border-box; } }
 @media (prefers-reduced-motion: reduce) { .contact-primary-cta, .contact-arrow { transition: none !important; } .contact-primary-cta:hover { transform: none; } }
+
+
+/* Clear separation between reels and real-estate portfolio work. */
+.video-category-group { margin-top: 2.25rem; }
+.video-group-title { margin: 0 0 .65rem; font-size: clamp(1.2rem, 2vw, 1.65rem); font-weight: 700; letter-spacing: -.025em; color: var(--text, #f3f3fb); }
+.video-group-intro { max-width: 46rem; margin: 0 0 1.25rem; color: var(--muted, #b7b9cb); line-height: 1.7; }
+.video-category-group--real-estate { margin-top: 3.25rem; padding-top: 2.25rem; border-top: 1px solid rgba(255,255,255,.13); }

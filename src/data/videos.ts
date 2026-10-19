@@ -28,7 +28,7 @@ export type VideoSource =
   | { kind: 'file'; src: string }
   | { kind: 'link'; href: string };
 
-export type VideoCategory = 'showreel' | 'sports' | 'social' | 'promo' | 'other';
+export type VideoCategory = 'showreel' | 'sports' | 'social' | 'promo' | 'realEstate' | 'other';
 
 export interface VideoItem {
   id: string;
@@ -106,12 +106,31 @@ export const videos: VideoItem[] = [
       en: 'Real estate talking-head reel',
       ar: 'ريل عقاري',
     },
-    category: 'promo',
-    aspect: 'portrait',
+    category: 'realEstate',
+    aspect: 'landscape',
     poster: 'videos/posters/reel-real-estate.webp',
     posterAlt: {
       en: 'Frame from a vertical real estate reel with a land aerial inset, hand-drawn arrow and yellow Arabic captions',
       ar: 'لقطة من ريل عقاري رأسي بصورة جوية لأرض وسهم مرسوم وعناوين عربية صفراء',
+    },
+    source: driveFolder,
+  },
+  {
+    id: 'real-estate-land-highlight',
+    title: {
+      en: 'Al Ain land plot — aerial location highlight',
+      ar: 'تحديد موقع قطعة أرض — مسقط جوي',
+    },
+    category: 'realEstate',
+    aspect: 'landscape',
+    poster: 'videos/posters/real-estate-land-highlight.png',
+    posterAlt: {
+      en: 'Aerial desert map with a highlighted land plot, a glowing white outline, and a callout showing a modern house',
+      ar: 'خريطة جوية لمنطقة صحراوية مع قطعة أرض محددة بإطار مضيء وخط يصلها بصورة منزل حديث',
+    },
+    description: {
+      en: 'Aerial-style property presentation with land highlighting and a location callout.',
+      ar: 'عرض عقاري بأسلوب التصوير الجوي مع تحديد الأرض وإبراز موقعها على الخريطة.',
     },
     source: driveFolder,
   },
