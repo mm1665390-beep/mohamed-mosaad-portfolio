@@ -138,19 +138,19 @@ export const videos: VideoItem[] = [
 export const youtubeVideos: VideoItem[] = [
   {
     id: 'youtube-feature-1',
-    title: { en: 'YouTube Video 1', ar: 'فيديو يوتيوب ١' },
+    title: { en: 'Creative Handmade Ideas', ar: 'أفكار ومنتجات يدوية مميزة' },
     category: 'other',
     source: { kind: 'youtube', id: 'Zg4UhjWw-eA' },
   },
   {
     id: 'youtube-feature-2',
-    title: { en: 'YouTube Video 2', ar: 'فيديو يوتيوب ٢' },
+    title: { en: 'Book Review & Self Development', ar: 'مراجعة كتاب وتطوير الذات' },
     category: 'other',
     source: { kind: 'youtube', id: '5ATYhZuwtcY' },
   },
   {
     id: 'youtube-feature-3',
-    title: { en: 'YouTube Video 3', ar: 'فيديو يوتيوب ٣' },
+    title: { en: 'Trying Real Estate Investing', ar: 'محاولة استثمار في العقار' },
     category: 'other',
     source: { kind: 'youtube', id: 'khRugKEexvo' },
   },

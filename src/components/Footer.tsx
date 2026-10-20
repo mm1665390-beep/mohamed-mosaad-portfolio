@@ -27,6 +27,11 @@ export function Footer() {
             </ExternalLink>
           </li>
           <li>
+            <ExternalLink href="https://www.youtube.com/@MohamedMosaad-1" plain>
+              YouTube
+            </ExternalLink>
+          </li>
+          <li>
             <a href={`mailto:${site.email}`}>{t.contact.email}</a>
           </li>
           <li>

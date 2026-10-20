@@ -38,6 +38,12 @@ export function VideoWork() {
         {portraitVideos.length > 0 && renderVideos(portraitVideos, true)}
         {landscapeVideos.length > 0 && renderVideos(landscapeVideos, false)}
 
+        <p className="section-more video-drive-more">
+          <ExternalLink href={site.driveFolder} className="button button-primary" plain>
+            {t.video.openDrive}
+          </ExternalLink>
+        </p>
+
         <div className="video-category-group video-youtube-group">
           <h3 className="video-group-title">{t.video.youtubeHeading}</h3>
           <p className="video-group-intro">{t.video.youtubeIntro}</p>
@@ -47,7 +53,7 @@ export function VideoWork() {
             ))}
           </ul>
           <p className="section-more">
-            <ExternalLink href="https://www.youtube.com/@MohamedMosaad-1" className="button button-secondary" plain>
+            <ExternalLink href="https://www.youtube.com/@MohamedMosaad-1" className="button button-primary youtube-channel-button" plain>
               {t.video.youtubeChannel}
             </ExternalLink>
           </p>
@@ -60,11 +66,6 @@ export function VideoWork() {
           </Reveal>
         )}
 
-        <p className="section-more">
-          <ExternalLink href={site.driveFolder} className="button button-primary" plain>
-            {t.video.openDrive}
-          </ExternalLink>
-        </p>
       </div>
     </section>
   );
