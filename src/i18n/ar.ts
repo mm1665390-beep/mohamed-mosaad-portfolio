@@ -74,6 +74,9 @@ const ar: Dictionary = {
     play: 'تشغيل',
     viewInDrive: 'افتح على Drive',
     loading: 'جارٍ تحميل الفيديو',
+    youtubeHeading: 'فيديوهاتي على يوتيوب',
+    youtubeIntro: 'مختارات من فيديوهاتي على يوتيوب. شغّل أي فيديو من هنا أو افتح القناة لمشاهدة المزيد.',
+    youtubeChannel: 'زيارة قناتي على يوتيوب',
     openDrive: 'افتح مجلد الفيديوهات الكامل على Google Drive',
     emptyTitle: 'معرض الفيديو قيد التجهيز',
     emptyBody:

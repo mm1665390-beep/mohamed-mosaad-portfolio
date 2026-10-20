@@ -132,3 +132,26 @@ export const videos: VideoItem[] = [
     source: { kind: 'file', src: 'videos/clips/muscat-land-highlight.mp4' },
   },
 ];
+
+
+/** Selected videos from Mohamed's YouTube channel, using YouTube's own thumbnails. */
+export const youtubeVideos: VideoItem[] = [
+  {
+    id: 'youtube-feature-1',
+    title: { en: 'YouTube Video 1', ar: 'فيديو يوتيوب ١' },
+    category: 'other',
+    source: { kind: 'youtube', id: 'Zg4UhjWw-eA' },
+  },
+  {
+    id: 'youtube-feature-2',
+    title: { en: 'YouTube Video 2', ar: 'فيديو يوتيوب ٢' },
+    category: 'other',
+    source: { kind: 'youtube', id: '5ATYhZuwtcY' },
+  },
+  {
+    id: 'youtube-feature-3',
+    title: { en: 'YouTube Video 3', ar: 'فيديو يوتيوب ٣' },
+    category: 'other',
+    source: { kind: 'youtube', id: 'khRugKEexvo' },
+  },
+];

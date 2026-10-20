@@ -8,7 +8,7 @@ import { ExternalLink } from './ExternalLink';
 function posterFor(item: VideoItem): string | null {
   if (item.poster) return assetUrl(item.poster);
   const s = item.source;
-  if (s.kind === 'youtube') return `https://i.ytimg.com/vi/${s.id}/hqdefault.jpg`;
+  if (s.kind === 'youtube') return `https://i.ytimg.com/vi/${s.id}/maxresdefault.jpg`;
   if (s.kind === 'drive') return `https://drive.google.com/thumbnail?id=${s.id}&sz=w960`;
   return null;
 }
@@ -83,7 +83,11 @@ export function VideoCard({ item, featured = false }: { item: VideoItem; feature
   const { t, l } = useLanguage();
   const [active, setActive] = useState(false);
   const [posterFailed, setPosterFailed] = useState(false);
+  const [posterFallback, setPosterFallback] = useState(false);
   const poster = posterFor(item);
+  const resolvedPoster = item.source.kind === 'youtube' && posterFallback
+    ? `https://i.ytimg.com/vi/${item.source.id}/hqdefault.jpg`
+    : poster;
   const title = l(item.title);
   const portrait = item.aspect === 'portrait';
   const posterAlt = item.posterAlt ? l(item.posterAlt) : '';
@@ -92,13 +96,16 @@ export function VideoCard({ item, featured = false }: { item: VideoItem; feature
   const image =
     poster && !posterFailed ? (
       <img
-        src={poster}
+        src={resolvedPoster ?? undefined}
         alt={item.source.kind === 'link' ? posterAlt : ''}
         width={portrait ? 540 : 960}
         height={portrait ? 960 : 540}
         loading="lazy"
         decoding="async"
-        onError={() => setPosterFailed(true)}
+        onError={() => {
+          if (item.source.kind === 'youtube' && !posterFallback) setPosterFallback(true);
+          else setPosterFailed(true);
+        }}
       />
     ) : (
       <span className="video-fallback" aria-hidden="true">

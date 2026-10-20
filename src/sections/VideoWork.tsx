@@ -1,5 +1,5 @@
 import { useLanguage } from '../i18n/LanguageProvider';
-import { showreel, videos } from '../data/videos';
+import { showreel, videos, youtubeVideos } from '../data/videos';
 import { site } from '../data/site';
 import { SectionHeader } from '../components/SectionHeader';
 import { VideoCard } from '../components/VideoCard';
@@ -37,6 +37,21 @@ export function VideoWork() {
 
         {portraitVideos.length > 0 && renderVideos(portraitVideos, true)}
         {landscapeVideos.length > 0 && renderVideos(landscapeVideos, false)}
+
+        <div className="video-category-group video-youtube-group">
+          <h3 className="video-group-title">{t.video.youtubeHeading}</h3>
+          <p className="video-group-intro">{t.video.youtubeIntro}</p>
+          <ul className="video-grid video-grid--youtube">
+            {youtubeVideos.map((v) => (
+              <li key={v.id}><Reveal><VideoCard item={v} /></Reveal></li>
+            ))}
+          </ul>
+          <p className="section-more">
+            <ExternalLink href="https://www.youtube.com/@MohamedMosaad-1" className="button button-secondary" plain>
+              {t.video.youtubeChannel}
+            </ExternalLink>
+          </p>
+        </div>
 
         {!hasContent && (
           <Reveal className="video-empty">

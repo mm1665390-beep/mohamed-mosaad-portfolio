@@ -73,6 +73,9 @@ const en = {
     play: 'Play',
     viewInDrive: 'Open in Drive',
     loading: 'Loading video',
+    youtubeHeading: 'YouTube',
+    youtubeIntro: 'Selected videos from my YouTube channel. Play a video here or visit the channel for more.',
+    youtubeChannel: 'Visit my YouTube channel',
     openDrive: 'Open the full video folder on Google Drive',
     emptyTitle: 'Video gallery is being prepared',
     emptyBody:
