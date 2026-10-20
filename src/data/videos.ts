@@ -1,5 +1,4 @@
 import type { L10n } from '../i18n/types';
-import { site } from './site';
 
 /**
  * Four ways to add a video. Pick the one that fits where the file lives.
@@ -48,11 +47,9 @@ export interface VideoItem {
 export const showreel: VideoItem | null = null;
 
 /**
- * Thumbnails are real frames from your edits. Individual video links were not
- * available, so every card opens your Drive folder. Swap each `source` for the
- * file's own share link when you have it.
+ * Thumbnails are real frames from your edits. Each card plays its own MP4 from
+ * public/videos/clips/ (a sub-folder, because public/videos/*.mp4 is git-ignored).
  */
-const driveFolder: VideoSource = { kind: 'link', href: site.driveFolder };
 
 export const videos: VideoItem[] = [
   {
@@ -68,7 +65,7 @@ export const videos: VideoItem[] = [
       en: 'Frame from a vertical podcast edit with large animated caption text over a speaker at a microphone',
       ar: 'لقطة من مقطع بودكاست رأسي بعنوان متحرك كبير فوق متحدث أمام ميكروفون',
     },
-    source: driveFolder,
+    source: { kind: 'file', src: 'videos/clips/podcast-captions.mp4' },
   },
   {
     id: 'clinic-reel',
@@ -83,7 +80,7 @@ export const videos: VideoItem[] = [
       en: 'Frame from a vertical Arabic healthcare reel with colour caption boxes and an anatomy inset',
       ar: 'لقطة من ريل طبي رأسي بالعربية بعناوين ملوّنة وصورة توضيحية للجهاز الهضمي',
     },
-    source: driveFolder,
+    source: { kind: 'file', src: 'videos/clips/clinic-reel.mp4' },
   },
   {
     id: 'product-promo',
@@ -98,7 +95,7 @@ export const videos: VideoItem[] = [
       en: 'Frame from a vertical kitchen product promo with glowing Arabic caption text',
       ar: 'لقطة من ريل ترويجي رأسي داخل مطبخ بعناوين عربية مضيئة',
     },
-    source: driveFolder,
+    source: { kind: 'file', src: 'videos/clips/product-promo.mp4' },
   },
   {
     id: 'real-estate-reel',
@@ -107,23 +104,23 @@ export const videos: VideoItem[] = [
       ar: 'ريل عقاري',
     },
     category: 'realEstate',
-    aspect: 'landscape',
+    aspect: 'portrait',
     poster: 'videos/posters/reel-real-estate.webp',
     posterAlt: {
       en: 'Frame from a vertical real estate reel with a land aerial inset, hand-drawn arrow and yellow Arabic captions',
       ar: 'لقطة من ريل عقاري رأسي بصورة جوية لأرض وسهم مرسوم وعناوين عربية صفراء',
     },
-    source: driveFolder,
+    source: { kind: 'file', src: 'videos/clips/real-estate-reel.mp4' },
   },
   {
     id: 'real-estate-land-highlight',
     title: {
-      en: 'Al Ain land plot — aerial location highlight',
-      ar: 'تحديد موقع قطعة أرض — مسقط جوي',
+      en: 'Muscat, Oman land plot — aerial location highlight',
+      ar: 'قطعة أرض في مسقط، سلطنة عُمان — تحديد الموقع جويًا',
     },
     category: 'realEstate',
     aspect: 'landscape',
-    poster: 'videos/posters/real-estate-land-highlight.png',
+    poster: 'videos/posters/real-estate-land-highlight.webp',
     posterAlt: {
       en: 'Aerial desert map with a highlighted land plot, a glowing white outline, and a callout showing a modern house',
       ar: 'خريطة جوية لمنطقة صحراوية مع قطعة أرض محددة بإطار مضيء وخط يصلها بصورة منزل حديث',
@@ -132,36 +129,6 @@ export const videos: VideoItem[] = [
       en: 'Aerial-style property presentation with land highlighting and a location callout.',
       ar: 'عرض عقاري بأسلوب التصوير الجوي مع تحديد الأرض وإبراز موقعها على الخريطة.',
     },
-    source: driveFolder,
-  },
-  {
-    id: 'brand-intro',
-    title: {
-      en: 'Animated brand-intro title',
-      ar: 'عنوان افتتاحي متحرك لعلامة تجارية',
-    },
-    category: 'other',
-    aspect: 'portrait',
-    poster: 'videos/posters/title-brand-intro.webp',
-    posterAlt: {
-      en: 'Frame from an animated title sequence with Arabic and English text on a grey textured background',
-      ar: 'لقطة من عنوان متحرك بنص عربي وإنجليزي على خلفية رمادية مزخرفة',
-    },
-    source: driveFolder,
-  },
-  {
-    id: 'animated-title-card',
-    title: {
-      en: 'Animated title card with portrait',
-      ar: 'كارت عناوين متحرك مع صورة',
-    },
-    category: 'other',
-    aspect: 'portrait',
-    poster: 'videos/posters/title-animated-card.webp',
-    posterAlt: {
-      en: 'Frame from an animated title card with a framed portrait and Arabic and English captions',
-      ar: 'لقطة من كارت عناوين متحرك بصورة داخل إطار وعناوين بالعربية والإنجليزية',
-    },
-    source: driveFolder,
+    source: { kind: 'file', src: 'videos/clips/muscat-land-highlight.mp4' },
   },
 ];

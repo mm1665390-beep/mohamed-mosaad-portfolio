@@ -2059,3 +2059,31 @@ body, .site-header, .section-tint, .skill-group, .skill-list li, .theme-switch, 
 .video-group-title { margin: 0 0 .65rem; font-size: clamp(1.2rem, 2vw, 1.65rem); font-weight: 700; letter-spacing: -.025em; color: var(--text, #f3f3fb); }
 .video-group-intro { max-width: 46rem; margin: 0 0 1.25rem; color: var(--muted, #b7b9cb); line-height: 1.7; }
 .video-category-group--real-estate { margin-top: 3.25rem; padding-top: 2.25rem; border-top: 1px solid rgba(255,255,255,.13); }
+
+/* Mixed portrait + landscape gallery: portrait cards span two grid rows so landscape
+   cards can fill the space beside them. Card sizes and aspect ratios are untouched. */
+@media (min-width: 37rem) {
+  .video-grid:not(.video-grid--portrait) { grid-auto-flow: dense; align-items: start; }
+  .video-grid:not(.video-grid--portrait) > li:has(.is-portrait) { grid-row: span 2; }
+  /* Landscape cards sit after the portrait ones so they can stack in the leftover cell. */
+  .video-grid:not(.video-grid--portrait) > li:not(:has(.is-portrait)) { order: 1; }
+}
+
+/* Video gallery layout: 4 portrait reels in one row, then the landscape clip centred below. */
+.video-grid--portrait {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: none;
+  margin-inline: 0;
+}
+@media (min-width: 62rem) {
+  .video-grid--portrait { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+.video-grid--landscape {
+  grid-template-columns: minmax(0, 40rem);
+  justify-content: center;
+  margin-block-start: clamp(1rem, 2.4vw, 1.65rem);
+}
+@media (max-width: 40rem) {
+  .video-grid--portrait { grid-template-columns: minmax(0, 1fr); max-width: 22rem; margin-inline: auto; }
+  .video-grid--landscape { grid-template-columns: minmax(0, 1fr); }
+}
